@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
     return (
         <form>
@@ -7,9 +9,9 @@ const Login = () => {
             <input type="password" id="password" name="password" /><br />
             <button type="submit">Login</button>
             <br />
-            <a href="/register">Register</a>
+            <Link to ="/register">Register</Link>
             <h>&nbsp;&nbsp;</h>
-            <a href="/change-password">Change Password </a>
+            <Link to ="/change-password">Change Password</Link>
         </form>
     );  
 };
