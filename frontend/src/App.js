@@ -1,23 +1,28 @@
 import './App.css';
-import Navbar from './Navbar';
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from "./Home";
 import Login from './Login';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Register from './Register';
+import Forgetpassword from './forget_password';
+
 
 function App() {
   return (
+    <div className='App'>
+      <Navbar />
     <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path='/'>
-            <Login />
-          </Route>
-          <Route exact path = '/register'> TO DO </Route>
-          <Route exact path = '/change-password'> TO DO </Route>
-        </Switch>
-      </div>
+      <Routes>
+         
+        <Route path="/" element={<Home />} />
+       
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forget-password" element={<Forgetpassword />} />
+      </Routes>
     </Router>
+    </div>
   );
 }
 

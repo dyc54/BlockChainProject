@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -9,9 +10,10 @@ const Login = () => {
             <input type="password" id="password" name="password" /><br />
             <button type="submit">Login</button>
             <br />
-            <Link to ="/register">Register</Link>
+            <Link to ="/register">Don't have a account</Link>
+            <br />
             <h>&nbsp;&nbsp;</h>
-            <Link to ="/change-password">Change Password</Link>
+            <Link to ="/forget-password">I forget password</Link>
         </form>
     );  
 };
