@@ -13,7 +13,7 @@ const Login = () => {
             <Link to ="/register">Don't have a account</Link>
             <br />
             <h>&nbsp;&nbsp;</h>
-            <Link to ="/forget-password">Change Password</Link>
+            <Link to ="/forget-password">I forget password</Link>
         </form>
     );  
 };
