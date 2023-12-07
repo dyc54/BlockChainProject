@@ -1,0 +1,36 @@
+Week1：
+I formed a team with other people and we decided to do project 12, which is blockchain. 
+For the frontend, we will use React and Nodejs since a lot of companies are using it. 
+I am mainly responsible for the front-end in the team.
+
+Week2：
+I started to complete the propsoal, and I was the one in our group who completed the flow chart. 
+I finished the first draft first. Then based on the tutor's suggestion, modifications were made.
+
+Week3：
+Glenn and I completed part of the front-end work, including front-end page design, such as the appearance of the web page. 
+And completed the front-end code of log, sign up and register.
+
+Week4：
+I completed the front-end code of the home page and the front-end code of the user page.
+
+Week5：
+I completed the cover page, navbar, and creat three different pages for the supplier, hospital and patient.
+
+Week6：
+I finish the front-end code of the supplier page, they contain creat order, create medicine, check order, generate security code, check security code,
+check demand order, check prediction order and check Inventory.
+
+week7：
+I finish the front-end code of the hospital page, they contain creat demand order, check demand order, check prediction order, sell medicine,
+check transactions, check Inventory and check security code.
+
+week8：
+I finish the front-end code of the patient page, they contain buy medicine, check transactions and check security code.
+
+week9：
+I finish css of the supplier page, hospital page and patient page. I also finish the css of the cover page, navbar and home page.
+Finally, I finish the connection between the front-end and the back-end.
+
+week10:
+finish the demo and the final report.

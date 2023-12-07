@@ -1,0 +1,61 @@
+week1:
+
+i read some reaserch paper about blockchain combine with medicine supply chain 
+and choose the blockchain platform for out project.
+we intend to use hyperledger fabric as the blockchain platform.
+
+week2:
+
+i learned some basic knowledge about fabric, i tried the fabric-sample projects to familier
+with the how to deploy a blockchain network.
+
+week3:
+
+i continue learned fabric-sample projects for how to write a smart contract and how to deloy
+an app on fabric network, how to use gateway api to quary an assets.
+
+
+week4:
+
+i have started to write out backend and write the basic samrt contract.
+
+week5
+
+Starting to build our own production network
+Wrote basic chaincode logic for add, delete, and check
+
+week6
+
+Many unanticipated network configuration issues were encountered and resolved.
+The chain code is further enriched with transactions between providers and hospitals, and between hospitals and patients.
+
+week7
+Learned part of the fabric gateway
+Refactored the data structure and storage of the chain code to solve a lot of problems, 
+such as the creation of drugs may overwrite the original record of the situation, 
+instead of using the drug name as the key, the value of an array to store the same kind of drugs.
+Try writing scripts to simplify the deployment process
+
+week8
+Enrichment completes the chain code features, such as the way to view demand orders and create anti-fake codes. 
+(Using a pre-created pool of security codes and a fixed security code generation function to ensure that 
+multiple nodes execute with the same result in order to pass the endorsement policy.)
+
+Built a basic gateway to connect the blockchain to the backend.
+
+week9
+
+Wrote generate.sh and deploy.sh scripts for rapid deployment of blockchain networks and chaincode.
+
+Updated some of the chain code features such as Hospital and Provider View Inventory, 
+Hospital and Provider View Orderlist, Hospital and Provider View Demand Forecast List for Drugs.
+
+Completes the vast majority of the gateway, enabling front-end, back-end, and blockchain to be connected
+
+Started writing some introductory documentation for the project, 
+as well as blockchain deployment documentation to ensure that 
+the project could be successfully deployed in an environment other than our group.
+
+week10
+
+All the basic code work was completed in week 9, and this week I mostly updated the readme file and the documentation for blockchain deployment.

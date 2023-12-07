@@ -1,0 +1,68 @@
+Weihou Zeng (Peter Parker) - z5270202
+
+
+Week 1 (11/9 - 17/9)
+- Our team selected Project 12, driven by our collective interest in blockchain and the complementary skills of our members.
+- Engaged in discussions pertaining to various facets of Project 12.
+
+
+Week 2 (18/9 - 24/9)
+In-person meeting:
+- Delved deep into the project proposal.
+- Brainstormed the necessary functionalities for the project.
+- Discussed essential components for both front-end and back-end development.
+
+Zoom meeting:
+- Delegated specific tasks to each member after an exhaustive conversation about the project.
+- Drafted an initial plan to guide our project workflow.
+- Contemplated on the technical skillset required for successful project execution.
+
+
+Week 3 (25/9 - 1/10)
+- Finalized the project proposal.
+- Clearly outlined the epics and determined the desired workflow.
+- Initialized our base codes for the project.
+- Commenced work on the backend development.
+
+
+Week 4 (2/10 - 8/10)
+- Evaluated and identified technical areas that warranted research by individual team members.
+- Chose a specific epic for focus during our upcoming sprint.
+- Integrated the front-end with the back-end and advanced our backend coding.
+- Scheduled our next team gathering.
+
+
+Week 5 (9/10 - 15/10)
+- Added three new API endpoints to our backend, incorporating complex operations.
+- Reviewed code for performance improvements.
+- Resolved concurrency bugs, enhancing our app's stability.
+- Prepared for our mid-sprint review with performance data and documentation.
+
+
+Week 6 (16/10 - 22/10)
+- Worked with the front-end team on API integration.
+- Supported front-end connectivity and data management.
+
+
+Week 7 (23/10 - 29/10)
+- Conducted pair programming for better backend practices.
+- Implemented security protocols for our APIs.
+
+
+Week 8 (30/10 - 5/11)
+- Worked with the front-end team on API integration.
+- Merged code branches, maintaining development stability.
+- Appreciated Guangyuan's and Glenn's help in code troubleshooting.
+- Shared backend insights in a team workshop.
+
+
+Week 9 (6/11 - 12/11)
+- Worked with the front-end team on API integration.
+- Optimized APIs for the upcoming release.
+- Completed backend style checks.
+- A team Q&A to resolve development queries.
+
+
+Week 10 (13/11 - 19/11)
+- Successfully completed the project by wrapping up the final report,
+conducting a comprehensive code review, and successfully delivering the project showcase.

@@ -1,0 +1,19 @@
+Week1：Group formed and named. Selected scrum master. Created the Jira site. Decided the topic. Decided I will do frontend.
+
+Week2: As a team we decided to use javascript for frontend and java for backend. Start coding on frontend. I drew the flow diagram and explained it.
+
+week3: Wrote part of the front-end web page code, including login, change password and registration interface
+
+week4: Setting up the backend environment and starting to write APIs.
+
+week5: Learning about hyperledger fabric and trying to build a blockchain fabric environment.
+
+week6: Finish building the fabric network and learn about fabric gateway.
+
+week7: Make the gateway link to the backend.
+
+week8: Write APIs using springboot that correspond to blockchain smart contracts. Complete sprint2 functionality.
+
+week9: Run projects with other group members for testing and debugging.
+
+week10: Done final demo presentation and report.

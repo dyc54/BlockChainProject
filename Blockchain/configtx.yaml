@@ -1,0 +1,176 @@
+Organizations:
+    - &OrdererOrg
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: ./crypto-config/ordererOrganizations/example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('OrdererMSP.admin')"
+
+        OrdererEndpoints:
+            - orderer.example.com:7050
+
+    - &Supplier
+        Name: SupplierMSP
+        ID: SupplierMSP
+        MSPDir: ./crypto-config/peerOrganizations/supplier.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('SupplierMSP.admin', 'SupplierMSP.peer', 'SupplierMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('SupplierMSP.admin', 'SupplierMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('SupplierMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('SupplierMSP.peer')"
+        AnchorPeers:
+            - Host: peer0.supplier.example.com
+              Port: 7051
+
+    - &Hospital
+        Name: HospitalMSP
+        ID: HospitalMSP
+        MSPDir: ./crypto-config/peerOrganizations/hospital.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('HospitalMSP.admin', 'HospitalMSP.peer', 'HospitalMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('HospitalMSP.admin', 'HospitalMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('HospitalMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('HospitalMSP.peer')"
+        AnchorPeers:
+            - Host: peer0.hospital.example.com
+              Port: 9051
+    
+    - &Patient
+        Name: PatientMSP
+        ID: PatientMSP
+        MSPDir: ./crypto-config/peerOrganizations/patient.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('PatientMSP.admin', 'PatientMSP.peer', 'PatientMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('PatientMSP.admin', 'PatientMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('PatientMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('PatientMSP.peer')"
+        AnchorPeers:
+            - Host: peer0.patient.example.com
+              Port: 11051
+
+Capabilities:
+    Channel: &ChannelCapabilities
+        V2_0: true
+    Orderer: &OrdererCapabilities
+        V2_0: true
+    Application: &ApplicationCapabilities
+        V2_0: true
+
+Application: &ApplicationDefaults
+    Organizations:
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        LifecycleEndorsement:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Endorsement"
+        Endorsement:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Endorsement"
+    Capabilities:
+        <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+    OrdererType: solo
+    Addresses:
+        - orderer.example.com:7050
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+    Organizations:
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        BlockValidation:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+    Capabilities:
+        <<: *ChannelCapabilities
+
+Profiles:
+    ThreeOrgsApplicationGenesis:
+        <<: *ChannelDefaults
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+            Capabilities: *OrdererCapabilities
+        Consortiums:
+            StakeholderConsortium:
+                Organizations:
+                    - *Supplier
+                    - *Hospital
+                    - *Patient
+
+    ThreeOrgsChannel:
+        Consortium: StakeholderConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Supplier
+                - *Hospital
+                - *Patient
+            Capabilities:
+                <<: *ApplicationCapabilities
+
